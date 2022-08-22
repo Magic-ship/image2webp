@@ -1,0 +1,15 @@
+{
+  "name": "image2webp",
+  "version": "1.0.0",
+  "description": "Optimize All of image in specified folder into webp file",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "@types/node": "^18.6.2",
+    "ora": "^6.1.2"
+  }
+}
