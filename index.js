@@ -14,12 +14,14 @@ const image2webp = (dir, quality) => {
   lastHour.setHours(lastHour.getHours() - 1);
 
   process.chdir(dir);
-  nonWebPFiles.forEach((file) => {
+  nonWebPFiles.forEach(async (file) => {
     const fileNameWithoutExtension = path.basename(file, path.extname(file));
-    execAsync(
+    // const fileNameWithoutExtension = `${parseInt(path.basename(file, path.extname(file))) + 6500}`;
+    await execAsync(
       `cwebp ${file} -q ${quality} -o ${fileNameWithoutExtension}.webp`
     );
+    console.log(fileNameWithoutExtension);
   });
 };
 
-image2webp("./png", 100);
+image2webp("./images", 100);
