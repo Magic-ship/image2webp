@@ -10,9 +10,6 @@ const image2webp = (dir, quality) => {
     .readdirSync(dir)
     .filter((file) => !file.endsWith(".webp") && !file.endsWith(".ico"));
 
-  const lastHour = new Date();
-  lastHour.setHours(lastHour.getHours() - 1);
-
   process.chdir(dir);
   nonWebPFiles.forEach(async (file) => {
     const fileNameWithoutExtension = path.basename(file, path.extname(file));
@@ -24,4 +21,4 @@ const image2webp = (dir, quality) => {
   });
 };
 
-image2webp("./images", 100);
+image2webp("./png", 80);
