@@ -12,7 +12,7 @@ const image2webp = (dir, quality) => {
 
   process.chdir(dir);
   nonWebPFiles.forEach(async (file) => {
-    const fileNameWithoutExtension = path.basename(file, path.extname(file));
+    const fileNameWithoutExtension =  "../webp/"+ path.basename(file, path.extname(file));
     // const fileNameWithoutExtension = `${parseInt(path.basename(file, path.extname(file))) + 6500}`;
     await execAsync(
       `cwebp ${file} -q ${quality} -o ${fileNameWithoutExtension}.webp`
